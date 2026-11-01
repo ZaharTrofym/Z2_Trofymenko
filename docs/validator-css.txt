@@ -1,0 +1,4 @@
+Nu Html Checker (vnu.jar --css)
+Príkaz: java -jar vnu.jar --css css/styles.css
+Výsledok: bez chýb a bez upozornení (css/styles.css)
+Poznámka: knižnica css/vendor/bootstrap.min.css je cudzí kód a nevalidovala sa.

@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="sk">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>O projekte | Obedové menu</title>
+  <meta name="description" content="Ako funguje stránka s obedovým menu, odkiaľ berie údaje a aké knižnice používa.">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/vendor/bootstrap.min.css">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Preskočiť na obsah</a>
+
+  <header class="site-header">
+    <div class="container d-flex flex-wrap align-items-center justify-content-between gap-2 py-3">
+      <a class="site-title" href="index.html">Obedové menu</a>
+      <nav aria-label="Hlavná navigácia">
+        <ul class="nav-list">
+          <li><a href="index.html">Menu</a></li>
+          <li><a href="o-projekte.html" aria-current="page">O projekte</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" class="container py-4 about">
+    <h1>O projekte</h1>
+
+    <section aria-labelledby="about-what">
+      <h2 id="about-what">Čo stránka robí</h2>
+      <p>Stránka zbiera denné menu z viacerých reštaurácií v okolí FEI STU a zobrazuje ich na jednom mieste. Dá sa prepínať medzi dňami, pozrieť celý týždeň a vybrať si, ktoré reštaurácie sa majú zobraziť.</p>
+    </section>
+
+    <section aria-labelledby="about-how">
+      <h2 id="about-how">Ako to funguje</h2>
+      <p>Celá aplikácia beží len v prehliadači, žiadny vlastný server ani databáza sa nepoužíva. Postup je pri každej reštaurácii rovnaký:</p>
+      <ol>
+        <li>JavaScript stiahne stránku reštaurácie cez Fetch API.</li>
+        <li>Text HTML sa rozparsuje pomocou <code>DOMParser</code> do samostatného dokumentu, ktorý sa nezobrazí na našej stránke.</li>
+        <li>Z neho sa cez <code>querySelector</code> a <code>querySelectorAll</code> vyberú dni, jedlá, ceny a alergény. Každá reštaurácia má vlastnú funkciu, lebo každá stránka je postavená inak.</li>
+        <li>Výsledok má vždy rovnakú štruktúru, takže zvyšok stránky nezáleží na tom, odkiaľ údaje prišli.</li>
+        <li>Údaje sa uložia do <code>localStorage</code>. Ak už existujú z dnešného dňa, stránka sa nesťahuje znova. Tlačidlo Aktualizovať menu stiahne všetko nanovo.</li>
+      </ol>
+      <p>Ak sa jedna reštaurácia nenačíta, ostatné sa zobrazia normálne a pri chybnej sa ukáže správa a tlačidlo Skúsiť znova.</p>
+    </section>
+
+    <section aria-labelledby="about-source">
+      <h2 id="about-source">Živá stránka alebo lokálna kópia</h2>
+      <p>Prehliadač kvôli politike CORS nedovolí priamo čítať cudzie stránky, preto sú v priečinku <code>source/</code> uložené lokálne kópie stránok reštaurácií. Prepínač v hornej časti stránky Použiť lokálne kópie stránok určuje, či sa údaje berú z kópií, alebo sa stránky reštaurácií načítavajú priamo zo siete. Ak by prehliadač čítanie cudzej stránky zablokoval (CORS), zobrazí sa pri danej reštaurácii chybové hlásenie. Adresu proxy servera je možné nastaviť v konštante <code>PROXY_URL</code>, zatiaľ nie je nastavená. Predvolene sú zapnuté lokálne kópie.</p>
+    </section>
+
+    <section aria-labelledby="about-restaurants">
+      <h2 id="about-restaurants">Reštaurácie</h2>
+      <ul>
+        <li>Idyla cafe&amp;restaurant, Mlynská dolina (zdroj: restauracie.sme.sk)</li>
+        <li>Karloveská Klubovňa, Jurigovo nám. 1 (zdroj: menucka.sk)</li>
+        <li>Naše Hospoda Karloveská, Segnerova 3 (zdroj: vlastný web nasehospoda-karloveska.sk)</li>
+      </ul>
+    </section>
+
+    <section aria-labelledby="about-libs">
+      <h2 id="about-libs">Použité knižnice a písmo</h2>
+      <ul>
+        <li>Bootstrap 5.3.8, len CSS, licencia MIT (getbootstrap.com)</li>
+        <li>jQuery 4.0.0, licencia MIT (jquery.com)</li>
+        <li>Nunito, licencia SIL Open Font License 1.1, súbory sú uložené lokálne v priečinku <code>fonts/</code></li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container py-3">
+      <p class="mb-1">Použité knižnice: Bootstrap 5.3.8 (CSS), jQuery 4.0.0, písmo Nunito (licencia SIL OFL 1.1).</p>
+      <p class="mb-0">Zadanie 2 z predmetu WEBTE1, STU FEI, Zakhar Trofymenko.</p>
+    </div>
+  </footer>
+</body>
+</html>

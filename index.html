@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="sk">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Obedové menu v okolí fakulty</title>
+  <meta name="description" content="Denné menu reštaurácií v okolí FEI STU na jednom mieste.">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/vendor/bootstrap.min.css">
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="js/vendor/jquery.min.js" defer></script>
+  <script src="js/parsers.js" defer></script>
+  <script src="js/script.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Preskočiť na obsah</a>
+
+  <header class="site-header">
+    <div class="container d-flex flex-wrap align-items-center justify-content-between gap-2 py-3">
+      <a class="site-title" href="index.html">Obedové menu</a>
+      <nav aria-label="Hlavná navigácia">
+        <ul class="nav-list">
+          <li><a href="index.html" aria-current="page">Menu</a></li>
+          <li><a href="o-projekte.html">O projekte</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" class="container py-4">
+    <h1 class="mb-1">Obedové menu v okolí fakulty</h1>
+    <p class="lead text-body-secondary">Denné menu reštaurácií pri FEI STU na jednom mieste.</p>
+
+    <section class="toolbar" aria-label="Ovládanie">
+      <div class="d-flex flex-wrap align-items-center gap-2">
+        <button id="refresh" type="button" class="btn btn-brand">Aktualizovať menu</button>
+        <button id="clear" type="button" class="btn btn-outline-secondary">Vymazať uložené dáta</button>
+        <div class="form-check form-switch ms-md-2 mb-0">
+          <input class="form-check-input" type="checkbox" role="switch" id="use-local" checked>
+          <label class="form-check-label" for="use-local">Použiť lokálne kópie stránok</label>
+        </div>
+      </div>
+      <p id="status" class="status mb-0" role="status" aria-live="polite">Menu sa načítava…</p>
+    </section>
+
+    <fieldset class="filters" id="filters">
+      <legend class="filters-legend">Reštaurácie</legend>
+    </fieldset>
+
+    <p id="weekend-note" class="alert alert-info" hidden>Dnes je víkend, preto sa zobrazuje celý týždeň.</p>
+
+    <nav id="day-tabs" class="day-tabs" aria-label="Dni v týždni"></nav>
+
+    <section id="cards" class="row g-3 mt-1" aria-label="Menu reštaurácií"></section>
+    <noscript><p class="alert alert-warning">Táto stránka potrebuje zapnutý JavaScript.</p></noscript>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container py-3">
+      <p class="mb-1">Použité knižnice: Bootstrap 5.3.8 (CSS), jQuery 4.0.0, písmo Nunito (licencia SIL OFL 1.1).</p>
+      <p class="mb-0">Zadanie 2 z predmetu WEBTE1, STU FEI, Zakhar Trofymenko.</p>
+    </div>
+  </footer>
+</body>
+</html>
