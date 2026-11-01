@@ -2,6 +2,7 @@
 
 **Autor:** Zakhar Trofymenko, krúžok: cvičenie WEBTE1, pondelok 9:00, miestnosť C137
 **Stránka na školskom serveri:** https://webte1.fei.stuba.sk/~xtrofymenko/Z2_Trofymenko/
+**Git repozitár:** https://github.com/ZaharTrofym/Z2_Trofymenko
 
 ## O stránke
 
@@ -13,7 +14,7 @@ Stránka zbiera denné menu reštaurácií v okolí FEI STU a zobrazuje ich na j
 - Karloveská Klubovňa, Jurigovo nám. 1 (zdroj: menucka.sk)
 - Naše Hospoda Karloveská, Segnerova 3 (zdroj: vlastný web nasehospoda-karloveska.sk)
 
-Podľa e-mailu vyučujúceho som si mohol vybrať ľubovoľné stránky v okolí fakulty a pri problémoch s CORS použiť stiahnuté kópie HTML. Lokálne kópie stránok sú v priečinku `source/` a sú uložené 29. 10. 2026. Prepínač na stránke určuje, či sa použijú tieto kópie, alebo sa stránky načítajú živé. Živý režim skúša načítať stránku priamo, a ak ju prehliadač zablokuje (CORS), zobrazí pri reštaurácii chybové hlásenie. Adresu proxy servera je možné doplniť do konštanty `PROXY_URL` v `js/script.js`, zatiaľ je prázdna, preto je predvolene zapnutý režim lokálnych kópií.
+Podľa spresnenia k zadaniu nie je potrebné používať proxy, stačí načítavať lokálne HTML kópie stránok reštaurácií. Kópie sú v priečinku `source/` a sú uložené 29. 10. 2026. Prepínač na stránke určuje, či sa použijú tieto kópie, alebo sa stránky načítajú živé. Živý režim skúša načítať stránku priamo, a ak ju prehliadač zablokuje (CORS), zobrazí pri reštaurácii chybové hlásenie. Adresu proxy servera je možné doplniť do konštanty `PROXY_URL` v `js/script.js`, zatiaľ je prázdna, preto je predvolene zapnutý režim lokálnych kópií.
 
 ## Zdroje
 
