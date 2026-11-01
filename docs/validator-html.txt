@@ -1,3 +1,0 @@
-Nu Html Checker (vnu.jar, rovnaký engine ako validator.w3.org/nu)
-Príkaz: java -jar vnu.jar index.html o-projekte.html
-Výsledok: bez chýb a bez upozornení (index.html, o-projekte.html)
